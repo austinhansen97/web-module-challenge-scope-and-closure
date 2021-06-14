@@ -9,7 +9,7 @@ The module challenge is the afternoon project or assignment that students work t
 ## Objectives
 
 - Explain function scope
-- Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
+- Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript
 
 ## Introduction
 
@@ -17,7 +17,7 @@ This challenge focuses on both scope and closures.
 
 In this challenge you will be working to build a `scoreboard` (in the console) that takes randomly generated data and keeps track of a game's progress. If you're not familiar with the rules of baseball what you need to know is this: there are 9 innings and teams take turns "at-bat." Teams can only score while they are at bat. A team stops being at bat once they have gotten 3 `outs` by either striking out or through game play. You can read more about baseball rules [here](https://www.rulesofsport.com/sports/baseball.html).
 
-A scoreboard in a major league stadium looks something like this. In fact, the scoreboard at Fenway Park in Boston is actually quite famous. 
+A scoreboard in a major league stadium looks something like this. In fact, the scoreboard at Fenway Park in Boston is actually quite famous.
 
 ![Fenway Scoreboard](https://storage.googleapis.com/afs-prod/media/media:e959506330fd4e5890023c93cfbaac55/800.jpeg)
 
@@ -43,30 +43,42 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Closure is where a child function reaches into the parent function to grab a value to use it in the child function.
+
 2. Study the following code, then answer the questions below.
 
 ```js
-function personalDice(name){
-  return function(){
-      // generate random number between 1 and 6
+function personalDice(name) {
+  return function () {
+    // generate random number between 1 and 6
     const newRoll = Math.floor(Math.random() * 6);
-    console.log(`${name} rolled a ${newRoll}`)
-  }
+    console.log(`${name} rolled a ${newRoll}`);
+  };
 }
 
 const dansRoll = personalDice("Dan");
 
 const zoesRoll = personalDice("Zoe");
 
-
 dansRoll();
 dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
 
+the "name" variable is used as a closure when it is in the console.log sentence. This value reaches into the parent function to get the argument.
+
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+It will always produce the return statemnt within the child function. What will change is the number generated in the console.log sentence.
+
+c. What is the lexical scope of `newRoll`?
+
+The child function to personalDice(the parent).
+
+<!--
+ -->
 
 ### Task 3 - Stretch Goals
 
@@ -92,4 +104,4 @@ addSix(21); // returns 27
 
 ## Submission Format
 
-Please see Canvas for cohort specific submission instructions 
+Please see Canvas for cohort specific submission instructions
