@@ -71,9 +71,11 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/) {
-  /*Code Here*/
+function inning() {
+  return Math.floor(Math.random() * 2);
 }
+
+// console.log(inning());
 
 /* ⚾️⚾️⚾️ Task 3: finalScore() ⚾️⚾️⚾️
 Use the finalScore function below to do the following:
@@ -89,9 +91,21 @@ Use the finalScore function below to do the following:
 }
 */
 
-function finalScore(/*code Here*/) {
-  /*Code Here*/
+function finalScore(numOfInnings, inningPoints) {
+  let homeScore = 0;
+  let awayScore = 0;
+  for (let i = 0; i < numOfInnings; i++) {
+    if (i < numOfInnings) {
+      homeScore = homeScore + inningPoints();
+      awayScore = awayScore + inningPoints();
+    }
+  }
+  return { Home: homeScore, Away: awayScore };
 }
+
+finalScore(9, function inning() {
+  return Math.floor(Math.random() * 3);
+});
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
 Use the getInningScore() function below to do the following:
