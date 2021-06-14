@@ -17,11 +17,11 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0]);
 }
-console.log(
-  processFirstItem(["foo", "bar"], function (str) {
-    return str + str;
-  })
-);
+// console.log(
+//   processFirstItem(["foo", "bar"], function (str) {
+//     return str + str;
+//   })
+// );
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -112,9 +112,16 @@ Use the getInningScore() function below to do the following:
   1. Receive a callback function - you will pass in the inning function from task 2 as your argument 
   2. Return an object with a score for home and a score for away that populates from invoking the inning callback function */
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
+function getInningScore(random) {
+  console.log(random);
+  let scoreObject = { Home: random(), Away: random() };
+  console.log(scoreObject);
+  return scoreObject;
 }
+
+getInningScore(function inning() {
+  return Math.floor(Math.random() * 3);
+});
 
 /* ⚾️⚾️⚾️ Task 5: scoreboard() ⚾️⚾️⚾️
 Use the scoreboard function below to do the following:
